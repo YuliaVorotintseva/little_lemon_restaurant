@@ -1,6 +1,8 @@
-export const Header = (navLinks) => (
+import "./Header.module.css";
+
+export const Header = ({navLinks}) => (
   <header>
-    <img src="../Logo.svg" alt="Logo" />
+    <img src="/assets/Logo.svg" alt="Logo" width="200" height="80" />
     <nav>
       <ul>
         {

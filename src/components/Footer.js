@@ -1,8 +1,10 @@
-export const Footer = (navLinks) => (
+import styles from "./Footer.module.css";
+
+export const Footer = ({ navLinks }) => (
   <footer>
-    <img src="../Logo.svg" alt="Logo" />
+    <img src="/assets/Logo.svg" alt="Logo" />
     <div>
-      <div>
+      <div className={styles.list}>
         <h4>Doormat Navigation</h4>
         <nav>
           <ul>
