@@ -1,0 +1,71 @@
+.testimonials {
+  padding: 40px 290px;
+}
+
+.testimonials h2 {
+  font-size: 64px;
+  font-family: "Markazi Text", serif;
+}
+
+.testimonials h2 {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.testimonials > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 75px;
+
+  margin-bottom: 140px;
+}
+
+.testimonial {
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 25px 20px;
+  border-radius: 16px;
+  background-color: #EDEFEE;
+}
+
+.testimonial button {
+  border: none;
+  background-color: inherit;
+  font-size: 16pt;
+  margin-top: 26px;
+  margin-bottom: 28px;
+}
+
+.user_info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 110px;
+  height: 130px;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.rate {
+  width: 100%;
+  text-align: end;
+  margin-bottom: 8px;
+}

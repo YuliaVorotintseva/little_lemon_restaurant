@@ -1,0 +1,17 @@
+.title h1,
+.title h3 {
+  font-family: "Markazi Text", serif;
+}
+
+.title h1 {
+  font-size: 64pt;
+  color: #F4CE14;
+  font-weight: bold;
+  height: 70px;
+}
+
+.title h3 {
+  font-size: 40pt;
+  color: #FFFFFF;
+  font-weight: normal;
+}

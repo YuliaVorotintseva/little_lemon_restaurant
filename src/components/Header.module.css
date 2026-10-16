@@ -16,6 +16,7 @@ ul {
 }
 
 header a {
+    font-family: "Karla", sans-serif;
     text-decoration: none;
     color: #333333;
     font-size: 18pt;

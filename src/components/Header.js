@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import "./Header.module.css";
 
 export const Header = ({navLinks}) => (
@@ -8,7 +10,7 @@ export const Header = ({navLinks}) => (
         {
           navLinks.map(link => (
             <li>
-              <a href={link.href}>{link.name}</a>
+              <Link to={link.to}>{link.name}</Link>
             </li>
           ))
         }

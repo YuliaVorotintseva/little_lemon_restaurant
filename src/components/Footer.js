@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import styles from "./Footer.module.css";
 
 export const Footer = ({ navLinks }) => (
@@ -10,7 +12,7 @@ export const Footer = ({ navLinks }) => (
           <ul>
             {navLinks.map(link => (
               <li>
-                <a href={link.href}>{link.name}</a>
+                <Link to={link.to}>{link.name}</Link>
               </li>
             ))}
           </ul>
