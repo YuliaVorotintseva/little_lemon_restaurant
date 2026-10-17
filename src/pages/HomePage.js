@@ -1,14 +1,19 @@
 import { Header } from '../components/Header';
-import { Main } from '../components/Main';
+import { HeroSection } from "../components/HeroSection";
+import { SpecialsSection } from "../components/SpecialsSection";
+import { TestimonialsSection } from "../components/TestimonialsSection";
+import { AboutSection } from "../components/AboutSection";
 import { Footer } from '../components/Footer';
 
 export const HomePage = ({ navLinks, specials, testimonials }) => (
   <>
     <Header navLinks={navLinks} />
-    <Main
-      specials={specials}
-      testimonials={testimonials}
-    />
+    <main>
+      <HeroSection />
+      <SpecialsSection specials={specials} />
+      <TestimonialsSection testimonials={testimonials} />
+      <AboutSection />
+    </main>
     <Footer navLinks={navLinks} />
   </>
 );

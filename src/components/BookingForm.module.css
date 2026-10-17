@@ -1,0 +1,47 @@
+.form {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #495E57;
+    color: #fff;
+}
+
+.form input,
+.form select {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+}
+
+.form fieldset {
+    width: 20vw;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    border-radius: 8px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.submit_btn {
+  width: fit-content;
+  background-color: #F4CE14;
+  color: #333333;
+  padding: 15px 30px;
+  border-radius: 16px;
+  border: none;
+  font-size: 16pt;
+  font-weight: bold;
+  align-self: center;
+}
+
+.submit_btn:disabled{
+    background-color: gray;
+}

@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 import styles from "./TestimonialsSection.module.css";
 
 export const TestimonialsSection = ({ testimonials }) => {
@@ -30,7 +32,7 @@ export const TestimonialsSection = ({ testimonials }) => {
         {
           testimonials.map(item => (
             <TestimonialItem
-              key={item.name}
+              key={uuidv4()}
               name={item.name}
               avatar={item.avatar}
               rate={item.rate}

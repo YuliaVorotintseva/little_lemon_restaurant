@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 import styles from "./SpecialsSection.module.css";
 
 import { Button } from "./ui";
@@ -37,7 +39,7 @@ export const SpecialsSection = ({ specials }) => {
         {
           specials.map(dish => (
             <SpecialDishItem
-              key={dish.dishName}
+              key={uuidv4()}
               img={dish.img}
               dishName={dish.dishName}
               price={dish.price}
