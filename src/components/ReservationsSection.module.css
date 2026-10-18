@@ -1,0 +1,40 @@
+.reservations {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  background-color: #495E57;
+  padding: 40px 0;
+}
+
+.reservations div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  color: #fff;
+  font-family: "Karla", sans-serif;
+}
+
+.reservation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #FFF;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.reservation h1 {
+  font-size: 24pt;
+}
+
+.reservation h3 {
+  font-size: 18pt;
+}
+
+.reservation p {
+  font-size: 16pt;
+}

@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router';
 
 import { HomePage } from './pages/HomePage';
 import { BookingPage } from './pages/BookingPage';
+import { ConfirmationPage } from './pages/ConfirmationPage';
+import { ReservationsPage } from './pages/ReservationsPage';
 
 function App() {
   const navLinks = [
@@ -70,6 +72,14 @@ function App() {
       <Route
         path='/booking'
         element={<BookingPage navLinks={navLinks} />}
+      />
+      <Route
+        path='/confirmation_booking'
+        element={<ConfirmationPage navLinks={navLinks} />}
+      />
+      <Route
+        path='/reservations'
+        element={<ReservationsPage navLinks={navLinks} />}
       />
     </Routes>
   )

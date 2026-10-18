@@ -1,0 +1,30 @@
+.confirmed_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  background-color: #495E57;
+  color: #fff;
+  padding: 40px 0;
+  font-family: "Karla", sans-serif;
+}
+
+.confirmed_data h1 {
+  font-size: 24pt;
+}
+
+.confirmed_data h3 {
+  font-size: 18pt;
+}
+
+.confirmed_data p{
+  font-size: 16pt;
+}
+
+.confirmed_data div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}

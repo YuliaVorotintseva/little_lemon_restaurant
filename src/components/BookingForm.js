@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { v4 as uuidv4 } from "uuid";
 
 import styles from "./BookingForm.module.css";
 
 export const BookingForm = ({
-  addNewReservation,
   availableTimes,
   updateTimes
 }) => {
@@ -12,27 +12,22 @@ export const BookingForm = ({
   const [time, setTime] = useState(availableTimes[0]);
   const [numberOfGuests, setNumberOfGuests] = useState(0);
   const [occasion, setOccasion] = useState("occasion");
+  const navigate = useNavigate();
 
   const getIsFormValid = () => (
     !!date && numberOfGuests > 0 && numberOfGuests <= 10 && occasion !== "occasion"
   );
 
-  const clearForm = () => {
-    setDate("");
-    setTime(availableTimes[0]);
-    setNumberOfGuests(0);
-    setOccasion("occasion");
-  }
-
   const handleSubmit = e => {
     e.preventDefault();
-    addNewReservation({
-      date,
-      time,
-      numberOfGuests: Number(numberOfGuests),
-      occasion
-    })
-    clearForm();
+    navigate("/confirmation_booking", {
+      state: {
+        date,
+        time,
+        numberOfGuests: Number(numberOfGuests),
+        occasion
+      }
+    });
   }
 
   return (

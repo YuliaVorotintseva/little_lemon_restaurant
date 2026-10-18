@@ -1,15 +1,24 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BookingForm } from './BookingForm';
 
+const mockNavigate = jest.fn();
+
+jest.mock('react-router', () => ({
+  ...jest.requireActual('react-router'),
+  useNavigate: () => mockNavigate,
+}));
+
 describe('BookingForm Submission', () => {
-  it('submits the form with the correct data when all fields are valid', () => {
-    const mockAddNewReservation = jest.fn();
+  beforeEach(() => {
+    mockNavigate.mockClear();
+  });
+
+  it('submits the form and navigates to the confirmation page with correct state', () => {
     const mockUpdateTimes = jest.fn();
     const availableTimes = ["17:00", "18:00", "19:00"];
 
     render(
       <BookingForm
-        addNewReservation={mockAddNewReservation}
         availableTimes={availableTimes}
         updateTimes={mockUpdateTimes}
       />
@@ -26,19 +35,21 @@ describe('BookingForm Submission', () => {
     fireEvent.change(guestsInput, { target: { value: '4' } });
 
     const occasionSelect = screen.getByLabelText(/occasion/i);
-
     fireEvent.change(occasionSelect, { target: { value: 'birthday' } });
 
     expect(submitButton).toBeEnabled();
 
     fireEvent.click(submitButton);
 
-    expect(mockAddNewReservation).toHaveBeenCalledTimes(1);
-    expect(mockAddNewReservation).toHaveBeenCalledWith({
-      date: '2026-10-25',
-      time: '17:00',
-      numberOfGuests: 4,
-      occasion: 'birthday'
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+
+    expect(mockNavigate).toHaveBeenCalledWith("/confirmation_booking", {
+      state: {
+        date: "2026-10-25",
+        time: "17:00",
+        numberOfGuests: 4,
+        occasion: "birthday"
+      }
     });
   });
 });
