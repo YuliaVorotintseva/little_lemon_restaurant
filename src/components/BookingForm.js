@@ -33,11 +33,13 @@ export const BookingForm = ({
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <fieldset>
-        <h1>Book a table</h1>
+        <legend id="booking-form-title" className={styles.legend}>
+          Book a table
+        </legend>
 
         <div className={styles.field}>
           <label htmlFor="res-date">
-            Choose date <sup>*</sup>
+            Choose date <sup aria-hidden="true">*</sup>
           </label>
           <input
             type="date"
@@ -48,17 +50,26 @@ export const BookingForm = ({
               setDate(selectedDate);
               updateTimes(selectedDate);
             }}
+            required
+            aria-required="true"
+            aria-describedby="date-hint"
           />
+          <span id="date-hint" className={styles.hint}>
+            Select your preferred date
+          </span>
         </div>
 
         <div className={styles.field}>
           <label htmlFor="res-time">
-            Choose time <sup>*</sup>
+            Choose time <sup aria-hidden="true">*</sup>
           </label>
           <select
             id="res-time"
             value={time}
             onChange={e => setTime(e.target.value)}
+            required
+            aria-required="true"
+            aria-describedby="time-hint"
           >
             {
               availableTimes.map(time => (
@@ -71,11 +82,16 @@ export const BookingForm = ({
               ))
             }
           </select>
+          <span id="time-hint" className={styles.hint} aria-live="polite">
+            {availableTimes.length > 0
+              ? `${availableTimes.length} time slots available`
+              : "No time slots available"}
+          </span>
         </div>
 
         <div className={styles.field}>
           <label htmlFor="guests">
-            Number of guests <sup>*</sup>
+            Number of guests <sup aria-hidden="true">*</sup>
           </label>
           <input
             type="number"
@@ -85,17 +101,25 @@ export const BookingForm = ({
             id="guests"
             value={numberOfGuests}
             onChange={e => setNumberOfGuests(e.target.value)}
+            required
+            aria-required="true"
+            aria-describedby="guests-hint"
           />
+          <span id="guests-hint" className={styles.hint}>
+            Between 1 and 10 guests
+          </span>
         </div>
 
         <div className={styles.field}>
           <label htmlFor="occasion">
-            Occasion <sup>*</sup>
+            Occasion <sup aria-hidden="true">*</sup>
           </label>
           <select
             id="occasion"
             value={occasion}
             onChange={e => setOccasion(e.target.value)}
+            required
+            aria-required="true"
           >
             <option value="occasion">Occasion</option>
             <option value="birthday">Birthday</option>
@@ -103,11 +127,18 @@ export const BookingForm = ({
           </select>
         </div>
 
+        <div className={styles.required}>
+          <p>
+            <sup aria-hidden="true">*</sup> required fields
+          </p>
+        </div>
+
         <input
           type="submit"
           value="Make Your reservation"
           className={styles.submit_btn}
           disabled={!getIsFormValid()}
+          aria-disabled={!getIsFormValid()}
         />
       </fieldset>
     </form>

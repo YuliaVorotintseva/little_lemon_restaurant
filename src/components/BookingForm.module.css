@@ -30,18 +30,22 @@
     gap: 5px;
 }
 
-.submit_btn {
-  width: fit-content;
-  background-color: #F4CE14;
-  color: #333333;
-  padding: 15px 30px;
-  border-radius: 16px;
-  border: none;
-  font-size: 16pt;
-  font-weight: bold;
-  align-self: center;
+.required {
+    font-size: 14pt;
 }
 
-.submit_btn:disabled{
+.submit_btn {
+    width: fit-content;
+    background-color: #F4CE14;
+    color: #333333;
+    padding: 15px 30px;
+    border-radius: 16px;
+    border: none;
+    font-size: 16pt;
+    font-weight: bold;
+    align-self: center;
+}
+
+.submit_btn:disabled {
     background-color: gray;
 }
